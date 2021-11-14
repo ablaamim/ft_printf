@@ -10,8 +10,10 @@
 	The <b>printf</b> function is one of the most versatile and well-known functions in the C language. From a testing aid to tabulation method, printf is a very powerful and important tool in every dev's kit. This project aims to recreate the behaviour of the original MacOS's printf, including its basic error management, some of its flags, minimum field width stipulation and most of its basic conversions.
 
 ---
-</p align="center">
-<img src="https://github.com/ablaamim/ft_printf/blob/main/srcs/ft_printfm.png"/>
+
+</p>
+<p align="center">
+<img src="https://github.com/ablaamim/ft_printf/blob/main/srcs/ft_printfm.png">
 </p>
 
 ---
@@ -19,6 +21,8 @@
 <h3 align=center>
 Mandatory
 </h3>
+
+---
 
 > <i>A small description of the required conversion:
 > - `%c` print a single character.
