@@ -6,22 +6,42 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 22:10:02 by ablaamim          #+#    #+#             */
-/*   Updated: 2021/11/14 22:31:24 by ablaamim         ###   ########.fr       */
+/*   Updated: 2021/11/15 00:27:10 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
-int	ft_putchar(char c)
+static int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
+}
+
+static int	ft_putstr(char *str)
+{
+	size_t	i;
+
+	i = 0;
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	return (i);
 }
 
 static int	ft_select(char c, va_list args, int count)
 {
 	if (c == 'c')
 		count += ft_putchar(va_arg(args, int));
+	if (c == 's')
+		count += ft_putstr(va_arg(args, char *));
 	return (count);
 }
 
