@@ -6,7 +6,7 @@
 #    By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/14 22:08:19 by ablaamim          #+#    #+#              #
-#    Updated: 2021/11/14 22:36:10 by ablaamim         ###   ########.fr        #
+#    Updated: 2021/11/16 11:38:12 by ablaamim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME = libftprintf.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_printf.c
+SRCS = ft_printf.c \
+	utils.c
 
 OBJS = $(SRCS:%.c=%.o)
 

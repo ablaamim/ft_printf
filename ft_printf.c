@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 22:10:02 by ablaamim          #+#    #+#             */
-/*   Updated: 2021/11/16 02:18:33 by ablaamim         ###   ########.fr       */
+/*   Updated: 2021/11/16 11:58:21 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*COUNT THE NUMBER OF CHARS IN HECADECIMALS*/
 
-int	ft_hexlen(unsigned long n)
+static int	ft_hexlen(unsigned long n)
 {
 	int	size;
 
@@ -27,7 +27,8 @@ int	ft_hexlen(unsigned long n)
 	return (size);
 }
 
-/* 	replaces the first 'n' characters with 'c' characters in our string */
+/*Replaces the first 'n' characters with 'c' characters in our string*/
+
 static void	*ft_memset(void *b, int c, size_t n)
 {
 	size_t	i;
@@ -42,6 +43,7 @@ static void	*ft_memset(void *b, int c, size_t n)
 }
 
 /*replaces characters with null characters '\0' in our string */
+
 static void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, '\0', n);
@@ -51,16 +53,16 @@ void	*ft_calloc(size_t memb, size_t size)
 {
 	 int 	*i;
 
-/* 	allocate size 'memb' * 'size' bytes of memory to our variable 'i' */
+/*Allocate size 'memb' * 'size' bytes of memory to our variable 'i' */
 	i = malloc(memb * size);
 	if (i == 0)
 		return (0);
-/* 	use the bzero function to fill 'i' with null characters */
+/*Use the bzero function to fill 'i' with null characters */
 	ft_bzero(i, (memb * size));
 	return (i);
 }
 
-static char	ft_hex_to_char(unsigned long long int n, int pxx)
+static char	ft_hex_to_char(unsigned long int n, int pxx)
 {
 	if (n < 10)
 /* 	convert to char */
@@ -80,7 +82,7 @@ static char	ft_hex_to_char(unsigned long long int n, int pxx)
 }
 
 /*CONVERSION*/
-char	*ft_itoh(char *str, int size, unsigned long int n, int pxx)
+static char	*ft_itoh(char *str, int size, unsigned long int n, int pxx)
 {
 	unsigned long int	div;
 
@@ -96,7 +98,7 @@ char	*ft_itoh(char *str, int size, unsigned long int n, int pxx)
 	return (str);
 }
 
-static int	ft_convert_hex(unsigned long long int n, int pxx)
+static int	ft_convert_hex(unsigned long int n, int pxx)
 {
 	int			size;
 	static char	*str;
