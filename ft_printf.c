@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 22:10:02 by ablaamim          #+#    #+#             */
-/*   Updated: 2021/11/15 09:58:29 by ablaamim         ###   ########.fr       */
+/*   Updated: 2021/11/16 02:18:33 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	ft_bzero(void *s, size_t n)
 
 void	*ft_calloc(size_t memb, size_t size)
 {
-	 int 	* i;
+	 int 	*i;
 
 /* 	allocate size 'memb' * 'size' bytes of memory to our variable 'i' */
 	i = malloc(memb * size);
@@ -69,11 +69,11 @@ static char	ft_hex_to_char(unsigned long long int n, int pxx)
 	{
 /* 	case %p or %x */
 		if (pxx == 0 || pxx == 1)
-/ * 	convert to lowercase * /
+/*	convert to lowercase */
 			return (n + 87);
-/ * 	case% X * /
+/*	case% X */
 		else
-/* 	convert to uppercase */
+/*	convert to uppercase */
 			return (n + 55);
 	}
 	return (0);
@@ -88,7 +88,7 @@ char	*ft_itoh(char *str, int size, unsigned long int n, int pxx)
 	while (n != 0)
 	{
 /* 	selects the characters to be converted */
-		div = n% 16 ;
+		div = n % 16 ;
 		str[size--] = ft_hex_to_char(div, pxx);
 /* 	searches for the next characters that will be converted */
 		n = n / 16 ;
