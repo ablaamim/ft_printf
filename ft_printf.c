@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 22:10:02 by ablaamim          #+#    #+#             */
-/*   Updated: 2021/11/15 10:14:23 by ablaamim         ###   ########.fr       */
+/*   Updated: 2021/11/15 09:58:29 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_hexlen(unsigned long n)
 	return (size);
 }
 
-/*	replaces the first 'n' characters with 'c' characters in our string */
+/* 	replaces the first 'n' characters with 'c' characters in our string */
 static void	*ft_memset(void *b, int c, size_t n)
 {
 	size_t	i;
@@ -69,9 +69,9 @@ static char	ft_hex_to_char(unsigned long long int n, int pxx)
 	{
 /* 	case %p or %x */
 		if (pxx == 0 || pxx == 1)
-/* 	convert to lowercase */
+/ * 	convert to lowercase * /
 			return (n + 87);
-/*	case% X */
+/ * 	case% X * /
 		else
 /* 	convert to uppercase */
 			return (n + 55);
@@ -88,7 +88,7 @@ char	*ft_itoh(char *str, int size, unsigned long int n, int pxx)
 	while (n != 0)
 	{
 /* 	selects the characters to be converted */
-		div = n % 16 ;
+		div = n% 16 ;
 		str[size--] = ft_hex_to_char(div, pxx);
 /* 	searches for the next characters that will be converted */
 		n = n / 16 ;
@@ -183,51 +183,64 @@ static int	ft_putstr(char *str)
 	return (i);
 }
 
-static int	ft_select(char c, va_list args, int count)
+static int	ft_after_percent(char c, va_list args, int count)
 {
+/* 	write a character */
 	if (c == 'c')
 		count += ft_putchar(va_arg(args, int));
+/* 	write a string */
 	if (c == 's')
 		count += ft_putstr(va_arg(args, char *));
-	if (c == 'i' || c == 'd')
-		count += ft_putnbr(va_arg(args, int));
-	if (c == 'u')
-		count += ft_putnbr(va_arg(args, unsigned int));
+/* 	write the address of the pointer, remembering to assign +2 to the counter because of the 0x of the hexadecimal */
 	if (c == 'p')
 	{
 		count += 2;
 		count += ft_convert_hex(va_arg(args, unsigned long int), 0);
 	}
-/*	convert a string to hexadecimal */
+/* 	write char-type characters with sign */
+	if (c == 'd' || c == 'i')
+		count += ft_putnbr(va_arg(args, int));
+/* 	write unsigned char characters */
+	if (c == 'u')
+		count += ft_putnbr(va_arg(args, unsigned int));
+/* 	convert a string to hexadecimal */
 	if (c == 'x')
 		count += ft_convert_hex(va_arg(args, unsigned int), 1);
 /* 	convert a string to hexadecimal */
 	if (c == 'X')
 		count += ft_convert_hex(va_arg(args, unsigned int), 2);
+/*	escreva "%" */
 	if (c == '%')
 	{
 		count++;
 		write(1, "%", 1);
 	}
+/* 	returns the number of characters converted */
 	return (count);
 }
 
 int	ft_printf(const char *s, ...)
 {
-	int		i;
+	int 		i;
 	int		count;
-	va_list	args;
+/* 	"store" our arguments */
+	va_list 	args;
 
 	i = 0;
 	count = 0;
-	va_start(args, s);
+/* 	integrates our arguments */
+	va_start (args, s);
+/* 	as long as there is content in our 's' pointer */
 	while (s[i])
 	{
+/* 	we must search for the "%" character, responsible for informing the printf flags */
 		if (s[i] == '%')
 		{
 			i++;
-			count = ft_select(s[i], args, count);
+/* 	when we find the "%" character, we will use the function to define what to do */
+			count = ft_after_percent(s[i], args, count);
 		}
+/* 	if not found, we will write the contents of our 's' pointer character by character */
 		else
 		{
 			count++;
@@ -235,6 +248,8 @@ int	ft_printf(const char *s, ...)
 		}
 		i++;
 	}
-	va_end(args);
+/* 	ends our operation by setting a result */
+	va_end (args);
+/* 	returns the number of characters written */
 	return (count);
 }
