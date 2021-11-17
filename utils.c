@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_types.c                                         :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 12:04:51 by ablaamim          #+#    #+#             */
-/*   Updated: 2021/11/17 12:40:31 by ablaamim         ###   ########.fr       */
+/*   Created: 2021/11/17 12:32:27 by ablaamim          #+#    #+#             */
+/*   Updated: 2021/11/17 12:33:49 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
-int	ft_type_c(int c)
+size_t	ft_strlen(char *s)
 {
-	return (write(1, &c, sizeof(char)));
-}
+	int	len;
 
-int	ft_type_s(char *s)
-{
-	if (!s)
-		s = "(null)";
-	return (write(1, s, ft_strlen(s) * sizeof(char)));
+	len = 0;
+	while (*s++)
+		len++;
+	return (len);
 }

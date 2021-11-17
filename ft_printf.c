@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:19:52 by ablaamim          #+#    #+#             */
-/*   Updated: 2021/11/17 12:25:38 by ablaamim         ###   ########.fr       */
+/*   Updated: 2021/11/17 12:40:05 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_type(va_list ap, char type)
 {
 	if (type == 'c')
 		return (ft_type_c(va_arg(ap, int)));
+	if (type == 's')
+		return (ft_type_s(va_arg(ap, char *)));
 	else
 		return (0);
 }
