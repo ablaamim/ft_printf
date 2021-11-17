@@ -5,13 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/14 22:17:31 by ablaamim          #+#    #+#             */
-/*   Updated: 2021/11/17 12:42:57 by ablaamim         ###   ########.fr       */
+/*   Created: 2021/11/17 15:57:40 by ablaamim          #+#    #+#             */
+/*   Updated: 2021/11/17 18:25:40 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 #include <stdio.h>
+#include <limits.h>
 
 int	main(int argc, char **argv)
 {
@@ -33,5 +34,11 @@ int	main(int argc, char **argv)
 	res = ft_printf("Display me out : %s\n", "~~I @in't @ $simple $tring~~!\t\n");
 	printf("%d\n", res);
 	printf("-----------------------------------------------------\n");
-return (EXIT_SUCCESS);
+	printf("--------------------- TEST P AND X ------------------------\n");
+	ft_printf("%x\n%p\n", 1337, 1337);
+	ft_printf("%x\n%p\n", (void *) 1337, (void *) 1337);
+	printf("-----------------------------------------------------\n");
+	ft_printf("%d\n%d\n", INT_MIN, INT_MAX);
+	printf("-----------------------------------------------------\n");
+	return (EXIT_SUCCESS);
 }
