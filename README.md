@@ -33,3 +33,5 @@ Mandatory
 > - `%u` print an unsigned decimal (base 10) number.
 > - `%x` print a number in hexadecimal (base 16).
 > - `%%` print a percent sign.</i>
+
+---
