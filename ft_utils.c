@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:00:17 by ablaamim          #+#    #+#             */
-/*   Updated: 2021/11/17 16:00:20 by ablaamim         ###   ########.fr       */
+/*   Updated: 2021/11/24 22:55:10 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ size_t	ft_strlen(char *str)
 	size_t	len;
 
 	len = 0;
-	while (str[len])
-		++len;
+	while (*str++)
+		len++;
 	return (len);
 }
 
@@ -38,7 +38,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return (src_len);
 }
 
-char	*ft_strjoin(char const	*s1, char const	*s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	s1_len;
 	size_t	s2_len;
