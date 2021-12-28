@@ -13,7 +13,7 @@
 
 </p>
 <p align="center">
-<img src="https://github.com/ablaamim/ft_printf/blob/main/srcs/ft_printfm.png">
+<img src="https://github.com/ablaamim/ft_printf/blob/main/SRC/ft_printfm.png">
 </p>
 
 ---
