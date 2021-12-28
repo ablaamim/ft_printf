@@ -1,5 +1,15 @@
 <h1 align="center">
-	<b>ft_printf : A new headache was born.</b>
+	<b>ft_printf : <i>A new headache was born.<i></b>
+
+---
+
+</p>
+<p align="center">
+<img src="https://64.media.tumblr.com/tumblr_m2rdijRXvp1qksjbgo1_500.gifv" width="500">
+<p/>
+
+---
+
 </h1>
 
 <h2 align="center">
@@ -20,6 +30,8 @@
 
 <p align=center>
 <i><b> ft_printf("%s\n", "When you light a candle, you also cast a shadow."); <b></i>
+<i><b> ft_printf("%s\n", "What hurts you, blesses you. Darkness is your candle."); <b></i>
+<i><b> ft_printf("%s\n", "Into the darkness they go, the wise and the lovely."); <b></i>
 
 ---
 
