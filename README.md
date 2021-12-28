@@ -17,7 +17,7 @@
 </h2>
 
 <p align=center>
-	The printf The versatility of the printf function in C represents a great exercise in programming. This [project](https://github.com/ablaamim/ft_printf/blob/main/SRC/en.subject.pdf) is of MODERATE difficulty. It will enable you to discover variadic functions in C. The key to a successful ft_printf is a well-structured and good extensible code.
+	The <b>printf</b> The versatility of the printf function in C represents a great exercise in programming. This project is of MODERATE difficulty. It will enable you to discover variadic functions in C. The key to a successful ft_printf is a well-structured and good extensible code.
 
 ---
 
