@@ -13,7 +13,7 @@
 </h1>
 
 <h2 align="center">
-	 <i>1337Cursus project :</i>
+	:trophy: <i>1337Cursus project :</i>
 </h2>
 
 <p align=center>
@@ -30,7 +30,9 @@
 
 <p align=center>
 :no_entry_sign: <i><b> ft_printf("%s\n", "When you light a candle, you also cast a shadow."); <b></i>
+
 :no_entry_sign: <i><b> ft_printf("%s\n", "What hurts you, blesses you. Darkness is your candle."); <b></i>
+
 :no_entry_sign: <i><b> ft_printf("%s\n", "Into the darkness they go, the wise and the lovely."); <b></i>
 
 ---
