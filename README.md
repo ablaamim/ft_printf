@@ -1,5 +1,5 @@
 <h1 align="center">
-	<b>ft_printf</b>
+	<b>ft_printf : A new headache was born.</b>
 </h1>
 
 <h2 align="center">
@@ -18,8 +18,12 @@
 
 ---
 
+<i> ft_printf("%s\n", "When you light a candle, you also cast a shadow."); </i>
+
+---
+
 <h3 align=center>
-Mandatory
+Mandatory :
 </h3>
 
 ---
@@ -33,5 +37,15 @@ Mandatory
 > - `%u` print an unsigned decimal (base 10) number.
 > - `%x` print a number in hexadecimal (base 16).
 > - `%%` print a percent sign.</i>
+
+---
+
+<h3 align=center>
+Bonus :
+</h3>
+
+> <i>Manage any combination of the following flags: 
+> - `-0.` and minimum field width with all conversions
+> - Manage all the following flags: `# +`(yes, one of them is a space)<i>
 
 ---
