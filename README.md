@@ -27,14 +27,14 @@
 </p>
 
 ---
-</p>
+
 <p align="center">
 :no_entry_sign: <i><b> ft_printf("%s\n", "When you light a candle, you also cast a shadow."); <b></i>
-
+<p align="center">
 :no_entry_sign: <i><b> ft_printf("%s\n", "What hurts you, blesses you. Darkness is your candle."); <b></i>
-
+<p align="center">
 :no_entry_sign: <i><b> ft_printf("%s\n", "Into the darkness they go, the wise and the lovely."); <b></i>
-<p/>
+
 ---
 
 <h3 align=center>
