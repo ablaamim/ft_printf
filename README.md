@@ -1,5 +1,5 @@
 <h1 align="center">
-	:anger: ### <i>ft_printf : A new headache was born.</i>
+	:anger: ###ft_printf : A new headache was born.
 
 ---
 
