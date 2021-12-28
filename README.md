@@ -18,7 +18,8 @@
 
 ---
 
-<i> ft_printf("%s\n", "When you light a candle, you also cast a shadow."); </i>
+<p align=center>
+<i><b> ft_printf("%s\n", "When you light a candle, you also cast a shadow."); <b></i>
 
 ---
 
