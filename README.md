@@ -97,7 +97,7 @@ This is how the embedded format tags are aligned :
 
 ---
 
-Project Organization :
+:construction: Project Organization :
 
 ```
 .
@@ -109,7 +109,7 @@ Project Organization :
 
 ---
 
-Step 1 :
+Step :one: :
 
 - I created a format structure inside my headerfile and also made some basic util typdefs :
 
@@ -123,7 +123,7 @@ typedef	struct s_fmt
 }	t_fmt
 ```
 
-Step 2 : 
+Step :two: : 
 
 I created mandatory functions in my ft_printf.c file :
 
