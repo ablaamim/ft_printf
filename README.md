@@ -184,6 +184,7 @@ I created functions responsible of initilizing both of my structures inside my f
 
 FT_INITIALIZE_FMT!
 --------------------
+
 ```
 DESCRIPTION :
 
@@ -238,8 +239,11 @@ PARAMETERS :
 RETURN VALUES :
 
 NONE.
+```
 
 Then i had to do some syntax analyzing (parsing) althrough the format string using the function ft_parsing() and its subfunctions "ft_flags_parser() ...".
+
+> void	*ft_parsing(t_fmt *fmt, t_holder *holder);
 
 ```
 DESCRIPTION :
