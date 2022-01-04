@@ -71,10 +71,18 @@
 | :triangular_flag_on_post: Flags :triangular_flag_on_post: | :question: |
 |--- |--- |
 | Num | (Number between % and the identifier) Minimum field width. |
-| '-' | Left justify. |
-| '0' | Field padded with 0's instead of blanks. |
-| '.' | Precision. |
-| '*' | Indicates that the maximum or minimum field width will be passed as parameter. |
+| **-** | Left justify. |
+| **0** | Field padded with 0's instead of blanks. |
+| **.** |  Precision. |
+| **+** | Add a plus sign ('+') in the front of positive numeric conversions. |
+| **' '** | Add a single space (' ') in the front of positive numeric conversions. |
+| **#** | Add the corresponding prefix in front of x, X and o conversions. |
+
+This is how the embedded format tags are aligned :
+
+| Holder key  | Prefix and justification flags *| Minimum Width *| Precision *	| Conversion 	|
+|--- |--- |--- |--- |--- |
+|`%`  | `-` , `0` , `+` ,  ... | `10`, `5` , ... | `.`, `.10`, `.5`, ... | `c`, `d`, `i`, `s`, ... |  
 
 **For %d and %i, the precision is the minimum number of digits to print.**
 
