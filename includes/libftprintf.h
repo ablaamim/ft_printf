@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 19:41:18 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/04 15:51:08 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/04 16:07:52 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 # define PLUS '+'
 # define ' '
 
-// STRUCTS USED :
+// STRUCTURES USED :
 
 typedef struct s_fmt
 {
