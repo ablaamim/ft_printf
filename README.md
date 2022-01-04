@@ -44,7 +44,7 @@
 
 ---
 
-> <i>A small description of the required conversion:
+> <i>A small description of the required conversions :
 
 | %  | Type |
 |--- |--- |
@@ -64,7 +64,7 @@
 :dart: Bonus :
 </h3>
 
-> <i>Manage any combination of the following flags: 
+> <i>Manage any combination of the following flags : 
 > - `-0.` and minimum field width with all conversions
 > - Manage all the following flags: `# +`(yes, one of them is a space)<i>
 
