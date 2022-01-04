@@ -96,3 +96,53 @@ This is how the embedded format tags are aligned :
 * flag '.' results in undefined behavior with '%c' and '%p'.
 
 ---
+
+Project Organization :
+
+```
+.
+├── includes/
+├── libft/
+├── srcs/
+├── Makefile
+```
+
+---
+
+Step 1 :
+
+- I created a format structure inside my headerfile and also made some basic util typdefs :
+
+```c
+typedef	struct s_fmt
+{
+	const char	*format;
+	va_list		ap;
+	size_t		i;
+	size_t		counter;
+}	t_fmt
+```
+
+Step 2 : 
+
+I created mandatory functions in my ft_printf.c file :
+
+> int	ft_printf(const char	*format, ...); 
+
+> int	ft_vprintf(const char	*format, va_list ap);
+
+DESCRIPTION :
+The  functions in the printf() family produce output according to a format 
+as described below.  The functions printf() and vprintf() write output to 
+stdout, the standard output stream. 
+
+PARAMETERS :
+#1. The string format in which the output will be printed.
+#2. ... The variadic arguments passed to the format string's placeholders. In 
+the vprintf() function, the variadic argument are already passed as a 
+va_list type.
+
+RETURN VALUES :
+Upon successful return, these functions return the number of characters printed.
+
+---
