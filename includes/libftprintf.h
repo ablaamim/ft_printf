@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 19:41:18 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/04 16:07:52 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/04 17:43:10 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,12 @@ int	ft_vprintf(const char *format, va_list ap);
 // STRUCTS INITIALIZERS
 
 t_fmt	*ft_initialize_fmt(const char *format, va_list ap);
+
+//PLACEHOLDERS MANAGEMENT AND PARSING
+
+void		ft_placeholders_manager(t_fmt *fmt);
+t_holder	*ft_initialize_holder(void);
+void		*ft_parsing(t_format *fmt, t_holder *holder);
+void		ft_flags_parser(t_fmt *fmt, t_holder *holder);
 
 #endif

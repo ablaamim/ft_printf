@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 15:28:21 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/04 15:52:43 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/04 17:15:05 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@ int	ft_vprintf(const char	*format, va_list ap)
 	fmt = ft_initialize_fmt(format, ap);
 	if (!fmt)
 		return(0);
+	while (fmt->format[fmt->i])
+	{
+		if (fmt->format[fmt->i] == '%')
+			ft_placeholders_manager(fmt);
+		else
+			fmt->counter += write(1, &fmt->format[fmt->i++], 1);
+	}
+	counter = fmt->counter;
+	free(fmt);
 	return (counter);
 }
 
