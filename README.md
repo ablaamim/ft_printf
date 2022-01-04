@@ -68,7 +68,7 @@
 > - `-0.` and minimum field width with all conversions
 > - Manage all the following flags: `# +`(yes, one of them is a space)<i>
 
-| :triangular_flag_on_post: Flag | :question: |
+| :triangular_flag_on_post: Flags :triangular_flag_on_post: | :question: |
 |--- |--- |
 | Num | (Number between % and the identifier) Minimum field width. |
 | '-' | Left justify. |
