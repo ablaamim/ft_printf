@@ -54,9 +54,9 @@
 | %d | Print a decimal (base 10) number. |
 | %i | Print an integer in base 10. |
 | %u | Print an unsigned decimal (base 10) number. |
-| %x | Print a number in hexadecimal (base 16). (lowercase)|
-| %X | Hex integer (uppercase)|
-| %% | Just the %  |				|
+| %x | Print a number in hexadecimal (base 16, lowercase).|
+| %X | Hex integer (uppercase). |
+| %% | Just the %. |				|
 
 ---
 
@@ -68,11 +68,11 @@
 > - `-0.` and minimum field width with all conversions
 > - Manage all the following flags: `# +`(yes, one of them is a space)<i>
 
-| Flag | ? |
+| :triangular_flag_on_post: Flag | :question: |
 |--- |--- |
 | Num | (Number between % and the identifier) Minimum field width. |
 | '-' | Left justify. |
-| '0' | Field padded with 0's instead of blanks.	|
+| '0' | Field padded with 0's instead of blanks. |
 | '.' | Precision. |
 | '*' | Indicates that the maximum or minimum field width will be passed as parameter. |
 
@@ -80,13 +80,11 @@
 
 **For %s, the precision is the maximum field width.**
 
-To be aware:
+:small_red_triangle_down: To be aware of :
 
-* flag '0' is ignored when flag '-' is present
-* flag '0' is ignored when flag '.' is present (%d e %i)
-* flag '0' results in undefined behavior with '%c', '%s' and '%p'
-* flag '.' results in undefined behavior with '%c' and '%p'
-
-
+* flag '0' is ignored when flag '-' is present.
+* flag '0' is ignored when flag '.' is present (%d e %i).
+* flag '0' results in undefined behavior with '%c', '%s' and '%p'.
+* flag '.' results in undefined behavior with '%c' and '%p'.
 
 ---
