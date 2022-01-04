@@ -65,8 +65,8 @@
 </h3>
 
 > <i>Manage any combination of the following flags : 
-> - `-0.` and minimum field width with all conversions
-> - Manage all the following flags: `# +`(yes, one of them is a space)<i>
+> - `-0.` and minimum field width with all conversions.
+> - Manage all the following flags: `# +`(yes, one of them is a space)<i>.
 
 | :triangular_flag_on_post: Flags :triangular_flag_on_post: | :question: |
 |--- |--- |
@@ -127,7 +127,23 @@ typedef	struct s_fmt
 	va_list		ap;
 	size_t		i;
 	size_t		counter;
-}	t_fmt
+}	t_fmt;
+```
+
+- Also a placeholder structure to stock all the informations about every placeholder that printf manages :
+
+```c
+typedef	struct s_holder
+{
+	int	left_justify;
+	char	*prefix;
+	char	padding;
+	int	width;
+	int	precision;
+	char	conversion;
+	char	*argument;
+	size_t	counter;	
+}	t_holder;
 ```
 
 Step :two: : 
@@ -154,5 +170,46 @@ va_list type.
 RETURN VALUES :
 
 Upon successful return, these functions return the number of characters printed.
+
+---
+
+Step :three: :
+
+I created functions responsible of initilizing both of my structures inside my ft_initializer.c file:
+
+> t_fmt		*ft_initialize_fmt(const char *format, va_list ap);
+
+> t_holder	*ft_initialize_holder(void);
+
+FT_INITIALIZE_FMT!
+--------------------
+DESCRIPTION :
+
+Initializes the format struct with the string given and the va_list variable,
+setting the initial values of both variables i and counter up to 0.
+
+PARAMETERS :
+
+#1. The string format in which the output will be printed.
+#2. The variadic arguments list
+
+RETURN VALUES :
+
+The new, inilialized variable struct format.
+	
+FT_INITIALIZE_HOLDER!
+--------------------
+DESCRIPTION :
+
+Initialize the holder struct that will retain the information of the 
+placeholders flags and conversions.
+
+PARAMETERS :
+
+NONE.
+
+RETURN VALUES :
+
+The new, inilialized variable struct holder.
 
 ---
