@@ -154,6 +154,7 @@ I created mandatory functions in my ft_printf.c file :
 
 > int	ft_vprintf(const char	*format, va_list ap);
 
+```
 DESCRIPTION :
 
 The  functions in the printf() family produce output according to a format 
@@ -170,7 +171,7 @@ va_list type.
 RETURN VALUES :
 
 Upon successful return, these functions return the number of characters printed.
-
+```
 ---
 
 Step :three: :
@@ -183,6 +184,7 @@ I created functions responsible of initilizing both of my structures inside my f
 
 FT_INITIALIZE_FMT!
 --------------------
+```
 DESCRIPTION :
 
 Initializes the format struct with the string given and the va_list variable,
@@ -196,9 +198,11 @@ PARAMETERS :
 RETURN VALUES :
 
 The new, inilialized variable struct format.
+```
 	
 FT_INITIALIZE_HOLDER!
 --------------------
+```
 DESCRIPTION :
 
 Initialize the holder struct that will retain the information of the 
@@ -211,5 +215,5 @@ NONE.
 RETURN VALUES :
 
 The new, inilialized variable struct holder.
-
+```
 ---
