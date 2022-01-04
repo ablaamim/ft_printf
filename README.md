@@ -197,7 +197,7 @@ PARAMETERS :
 
 RETURN VALUES :
 
-The new, inilialized variable struct format.
+The new, initialized variable struct format.
 ```
 	
 FT_INITIALIZE_HOLDER!
@@ -214,6 +214,47 @@ NONE.
 
 RETURN VALUES :
 
-The new, inilialized variable struct holder.
+The new, initialized variable struct holder.
 ```
+---
+
+Step :four: :
+
+I Created a function that will manage the format string, and unitializes the holder as well :
+
+> void	ft_placeholder_manager(t_fmt *fmt);
+```
+DESCRIPTION :
+
+The  ft_placeholders_manager() function manages whatever comes after the '%' char in the
+ft_printf() function. It calls the ft_initializer() function for the 
+format struct, as well as the ft_parsing() function that will eventually convert
+the argument passed to the va_list into the holder struct. At the end, it
+will print to the screen the converted string of the respective argument.
+
+PARAMETERS :
+#1. The t_format struct that holds information about the string to be formatted.
+
+RETURN VALUES :
+
+NONE.
+
+Then i had to do some syntax analyzing (parsing) althrough the format string using the function ft_parsing() and its subfunctions "ft_flags_parser() ...".
+
+```
+DESCRIPTION :
+
+The ft_parsing() function will take the format string from the index in which the
+placeholder begins, and will attempt to analyze and organize its flags and 
+conversors into a struct of type t_holder, using other parsing subfunctions.
+
+PARAMETERS :
+
+#1. The t_format struct that holds information about the string to be formatted.
+
+RETURN VALUES :
+
+It returns the t_holder variable that holds all the information about that particular placeholder.
+``` 
+
 ---
