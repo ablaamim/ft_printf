@@ -97,6 +97,13 @@ This is how the embedded format tags are aligned :
 
 ---
 
+</p>
+<p align="center">
+<img src="https://c.tenor.com/muf5U1UEp7MAAAAC/mickey-mouse-match.gif" width="500">
+<p/>
+
+---
+
 :construction: Project Organization :
 
 ```
