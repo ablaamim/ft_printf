@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_placeholders_manager.c                          :+:      :+:    :+:   */
+/*   ft_type_c.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/04 17:18:03 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 01:40:24 by ablaamim         ###   ########.fr       */
+/*   Created: 2022/01/05 01:51:57 by ablaamim          #+#    #+#             */
+/*   Updated: 2022/01/05 02:27:42 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_placeholders_manager(t_fmt *fmt)
+void	ft_type_c(t_fmt *fmt, t_holder *holder)
 {
-	t_holder *holder;
+	char	ch;
 
-	fmt->i++;
-	holder = ft_initialize_holder();
-	ft_parsing(fmt, holder);
-	if (holder->conversion)
-	{
-		ft_types(fmt, holder);
-		fmt->counter += write(1, holder->argument, holder->counter);
-		free(holder->argument);
-	}
-	free(holder->prefix);
-	free(holder);
+	ch = va_arg(fmt->ap, int);
+	if (!holder->width)
+		holder->width += 1;
+	holder->argument = (char *) malloc (holder->width * sizeof(char));
+	if (!holder->argument)
+		return ;
+	ft_memset(holder->argument, SPACE, holder->width);
+	if (holder->left_justify == 1)
+		holder->argument[0] = ch;
+	else
+		holder->argument[holder->width - 1] = ch;
+	holder->counter = holder->width;
 }

@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_types.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 06:17:52 by ablaamim          #+#    #+#             */
-/*   Updated: 2021/11/06 08:40:28 by ablaamim         ###   ########.fr       */
+/*   Created: 2022/01/05 01:44:29 by ablaamim          #+#    #+#             */
+/*   Updated: 2022/01/05 02:17:44 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_types(t_fmt *fmt, t_holder *holder)
 {
-	size_t	i;
-
-	if (!s)
-		return ;
-	i = 0;
-	while (s[i] != '\0')
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
-	ft_putchar_fd('\n', fd);
+	if (holder->conversion == 'c')
+		ft_type_c(fmt, holder);
 }

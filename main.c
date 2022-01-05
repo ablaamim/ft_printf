@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 06:22:57 by ablaamim          #+#    #+#             */
-/*   Updated: 2021/11/14 00:14:49 by ablaamim         ###   ########.fr       */
+/*   Created: 2022/01/05 02:19:56 by ablaamim          #+#    #+#             */
+/*   Updated: 2022/01/05 02:30:57 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libftprintf.h"
+#include <stdlib.h>
 
-void	ft_putnbr_fd(int n, int fd)
+int	main(int argc, char **argv)
 {
-	long	nb;
-
-	nb = (long) n;
-	if (nb < 0)
-	{
-		ft_putchar_fd(('-'), fd);
-		nb *= -1;
-	}
-	if (nb >= 10)
-		ft_putnbr_fd((nb / 10), fd);
-	ft_putchar_fd((nb % 10 + '0'), fd);
+	(void)	argc;
+	(void)	argv;
+	ft_printf("TESTING TYPE_C CONVERSION : |%c|\n", '@');
+	ft_printf("|%c|\n", ' ');
+	ft_printf("|%c|\n", 97);
+	return (EXIT_SUCCESS);
 }

@@ -6,16 +6,27 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 17:31:57 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 00:37:42 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/05 02:00:50 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
+void	ft_parse_conversion(t_fmt *fmt, t_holder *holder)
+{
+	if (!ft_strchr(HOLDER_ALL_FLAGS, fmt->format[fmt->i]) \
+		&& ft_isprint(fmt->format[fmt->i]))
+	{
+		holder->conversion = fmt->format[fmt->i];
+		fmt->i++;
+	}
+}
+
 void	ft_flags_parser(t_fmt *fmt, t_holder *holder)
 {
 	char	*tmp;
-	if(!holder->prefix)
+
+	if (!holder->prefix)
 		holder->prefix = ft_strdup("");
 	while (ft_strchr(HOLDER_ALL_FLAGS, fmt->format[fmt->i]))
 	{
@@ -36,5 +47,8 @@ void	ft_flags_parser(t_fmt *fmt, t_holder *holder)
 void	*ft_parsing(t_fmt *fmt, t_holder *holder)
 {
 	ft_flags_parser(fmt, holder);
+	ft_parse_conversion(fmt, holder);
+	if (!holder->conversion && ft_strchr(HOLDER_ALL_FLAGS, fmt->format[fmt->i]))
+		ft_parsing(fmt, holder);
 	return (holder);
 }

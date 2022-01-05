@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 19:41:18 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 00:13:52 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/05 02:18:31 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdarg.h>
 # include "../libft/libft.h"
 
-# define HOLDER_CONVERSION "cspdiuxX"
+# define HOLDER_CONVERSIONS "cspdiuxX"
 # define HOLDER_ALL_FLAGS "-0# +"
 # define HOLDER_JUSTIFY '-'
 # define HOLDER_PREFIX "# +"
@@ -67,11 +67,16 @@ int	ft_vprintf(const char *format, va_list ap);
 
 t_fmt	*ft_initialize_fmt(const char *format, va_list ap);
 
-//PLACEHOLDERS MANAGEMENT AND PARSING
+// PLACEHOLDERS MANAGEMENT AND PARSING
 
 void		ft_placeholders_manager(t_fmt *fmt);
 t_holder	*ft_initialize_holder(void);
-void		*ft_parsing(t_format *fmt, t_holder *holder);
+void		*ft_parsing(t_fmt *fmt, t_holder *holder);
 void		ft_flags_parser(t_fmt *fmt, t_holder *holder);
+void		ft_parse_conversion(t_fmt *fmt, t_holder *holder);
 
+// CONVERSIONS
+
+void	ft_types(t_fmt *fmt, t_holder *holder);
+void	ft_type_c(t_fmt *fmt, t_holder *holder);
 #endif
