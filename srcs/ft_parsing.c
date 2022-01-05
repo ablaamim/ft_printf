@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 17:31:57 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 02:00:50 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/05 16:20:49 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,44 @@ void	ft_parse_conversion(t_fmt *fmt, t_holder *holder)
 	}
 }
 
+void	ft_width_parser(t_fmt *fmt, t_holder *holder)
+{
+	int	width;
+
+	width = holder->width;
+	if (ft_isdigit(fmt->format[fmt->i]))
+	{
+		while (ft_isdigit(fmt->format[fmt->i]))
+		{
+			width = (width * 10) + (fmt->format[fmt->i] - 48);
+			fmt->i++;
+		}
+	}
+	holder->width = width;
+}
+
+void	ft_parse_precision(t_fmt *fmt, t_holder *holder)
+{
+	int	precision;
+
+	precision = holder->precision;
+	if (fmt->format[fmt->i] == HOLDER_PRECISION)
+	{
+		if (!ft_isdigit(fmt->format[fmt->i]))
+			precision = 0;
+		else
+		{
+			precision = 0;
+			while (ft_isdigit(fmt->format[fmt->i]))
+			{
+				precision = (precision * 10) + (fmt->format[fmt->i] - 48);
+				fmt->i++;
+			}
+		}
+	}
+	holder->precision = precision;
+}
+
 void	ft_flags_parser(t_fmt *fmt, t_holder *holder)
 {
 	char	*tmp;
@@ -30,7 +68,7 @@ void	ft_flags_parser(t_fmt *fmt, t_holder *holder)
 		holder->prefix = ft_strdup("");
 	while (ft_strchr(HOLDER_ALL_FLAGS, fmt->format[fmt->i]))
 	{
-		if (fmt->format[fmt->i] == HOLDER_JUSTIFY)
+		if (fmt->format[fmt->i] == HOLDER_LEFT_JUSTIFY)
 			holder->left_justify = 1;
 		if (ft_strchr(HOLDER_PREFIX, fmt->format[fmt->i]))
 		{
@@ -47,7 +85,9 @@ void	ft_flags_parser(t_fmt *fmt, t_holder *holder)
 void	*ft_parsing(t_fmt *fmt, t_holder *holder)
 {
 	ft_flags_parser(fmt, holder);
-	ft_parse_conversion(fmt, holder);
+	ft_width_parser(fmt, holder);
+	ft_precision_parser(fmt, holder);
+	ft_conversion_parser(fmt, holder);
 	if (!holder->conversion && ft_strchr(HOLDER_ALL_FLAGS, fmt->format[fmt->i]))
 		ft_parsing(fmt, holder);
 	return (holder);

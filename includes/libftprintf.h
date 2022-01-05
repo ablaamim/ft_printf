@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 19:41:18 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 02:18:31 by root             ###   ########.fr       */
+/*   Updated: 2022/01/05 16:21:26 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 # include <stdarg.h>
 # include "../libft/libft.h"
 
-# define HOLDER_CONVERSIONS "cspdiuxX"
+# define HOLDER_ALL_CONVERSIONS "cspdiuxX%"
 # define HOLDER_ALL_FLAGS "-0# +"
-# define HOLDER_JUSTIFY '-'
+# define HOLDER_LEFT_JUSTIFY '-'
 # define HOLDER_PREFIX "# +"
 # define HOLDER_PADDING '0'
 # define HOLDER_PRECISION '.'
@@ -30,11 +30,11 @@
 # define HEXA_LOWER_BASE "0123456789abcdef"
 
 # define POINTER_AND_HEXAL_PREFIX "0x"
-# define HEXU_PREFIX "0X"
+# define HEXAU_PREFIX "0X"
 
-# define MINUS '-'
-# define PLUS '+'
-# define SPACE ' '
+# define IS_MINUS '-'
+# define IS_PLUS '+'
+# define IS_SPACE ' '
 
 // STRUCTURES USED :
 
@@ -65,18 +65,25 @@ int	ft_vprintf(const char *format, va_list ap);
 
 // STRUCTS INITIALIZERS
 
-t_fmt	*ft_initialize_fmt(const char *format, va_list ap);
+t_fmt		*ft_initialize_fmt(const char *format, va_list ap);
+t_holder	*ft_initialize_holder(void);
 
 // PLACEHOLDERS MANAGEMENT AND PARSING
 
 void		ft_placeholders_manager(t_fmt *fmt);
-t_holder	*ft_initialize_holder(void);
 void		*ft_parsing(t_fmt *fmt, t_holder *holder);
 void		ft_flags_parser(t_fmt *fmt, t_holder *holder);
-void		ft_parse_conversion(t_fmt *fmt, t_holder *holder);
+void		ft_width_parser(t_fmt *fmt, t_holder *holder);
+void		ft_precision_parser(t_fmt *fmt, t_holder *holder);
+void		ft_conversion_parser(t_fmt *fmt, t_holder *holder);
 
 // CONVERSIONS
 
 void	ft_types(t_fmt *fmt, t_holder *holder);
 void	ft_type_c(t_fmt *fmt, t_holder *holder);
+
+// CONVERSION SUBFUNCTIONS
+void	ft_padding_left(char **src, char padding, int width);
+void	ft_padding_right(char **src, char padding, int width);
+
 #endif

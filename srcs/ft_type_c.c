@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 01:51:57 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 02:27:42 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/05 14:22:16 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_type_c(t_fmt *fmt, t_holder *holder)
 	holder->argument = (char *) malloc (holder->width * sizeof(char));
 	if (!holder->argument)
 		return ;
-	ft_memset(holder->argument, SPACE, holder->width);
+	ft_memset(holder->argument, IS_SPACE, holder->width);
 	if (holder->left_justify == 1)
 		holder->argument[0] = ch;
 	else
