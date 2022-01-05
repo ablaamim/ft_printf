@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 19:41:18 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 18:12:55 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/05 19:10:28 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,12 @@ t_holder	*ft_initialize_holder(void);
 
 // PLACEHOLDERS MANAGEMENT AND PARSING
 
-void		ft_placeholders_manager(t_fmt *fmt);
-void		*ft_parsing(t_fmt *fmt, t_holder *holder);
-void		ft_flags_parser(t_fmt *fmt, t_holder *holder);
-void		ft_width_parser(t_fmt *fmt, t_holder *holder);
-void		ft_precision_parser(t_fmt *fmt, t_holder *holder);
-void		ft_conversion_parser(t_fmt *fmt, t_holder *holder);
+void	ft_placeholders_manager(t_fmt *fmt);
+void	*ft_parsing(t_fmt *fmt, t_holder *holder);
+void	ft_flags_parser(t_fmt *fmt, t_holder *holder);
+void	ft_width_parser(t_fmt *fmt, t_holder *holder);
+void	ft_precision_parser(t_fmt *fmt, t_holder *holder);
+void	ft_conversion_parser(t_fmt *fmt, t_holder *holder);
 
 // CONVERSIONS
 
@@ -85,9 +85,8 @@ void	ft_type_str(t_fmt *fmt, t_holder *holder);
 void	ft_type_digit(t_fmt *fmt, t_holder *holder);
 
 // CONVERSION SUBFUNCTIONS
-void		ft_padding_left(char **src, char padding, int width);
-void		ft_padding_right(char **src, char padding, int width);
-void		ft_digit_width(t_fmt *fmt, int sign);
-void		ft_add_prefix(t_holder	*holder, int sign);
+void	ft_padding_left(char **src, char padding, int width);
+void	ft_padding_right(char **src, char padding, int width);
+void	ft_add_prefix(t_holder *holder, int sign);
 
 #endif

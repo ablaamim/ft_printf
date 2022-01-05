@@ -6,7 +6,7 @@
 #    By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/01 19:48:02 by ablaamim          #+#    #+#              #
-#    Updated: 2022/01/05 16:55:43 by ablaamim         ###   ########.fr        #
+#    Updated: 2022/01/05 19:13:12 by ablaamim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,8 @@ SRCS		= $(SRC_DIR)/ft_conversion_types.c \
 			$(SRC_DIR)/ft_initializer.c \
 			$(SRC_DIR)/ft_parsing.c \
 			$(SRC_DIR)/ft_placeholders_manager.c \
-			$(SRC_DIR)/ft_printf.c
+			$(SRC_DIR)/ft_printf.c \
+			$(SRC_DIR)/ft_type_digit.c
 
 OBJS		= $(SRCS:.c=.o)
 
