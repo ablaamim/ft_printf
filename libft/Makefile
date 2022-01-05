@@ -6,7 +6,7 @@
 #    By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 19:39:18 by ablaamim          #+#    #+#              #
-#    Updated: 2022/01/05 02:08:42 by root             ###   ########.fr        #
+#    Updated: 2022/01/05 16:54:43 by ablaamim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ NAME = libft.a
 CFLAGS	= -Wall -Werror -Wextra
 CC	= gcc
 # 	* functions that must be compiled through our makefile
-SRCS    = ft_append_char.c \
+SRCS    = ft_strndup.c \
+	ft_memcpy.c \
+	ft_append_char.c \
 	ft_isascii.c \
 	ft_isdigit.c \
 	ft_isprint.c \

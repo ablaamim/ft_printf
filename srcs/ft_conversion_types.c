@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_types.c                                         :+:      :+:    :+:   */
+/*   ft_conversion_types.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 01:44:29 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 14:59:38 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/05 17:00:41 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_types(t_fmt *fmt, t_holder *holder)
+void	ft_conversion_types(t_fmt *fmt, t_holder *holder)
 {
 	if (holder->conversion == 'c')
-		ft_type_c(fmt, holder);
+		ft_type_char(fmt, holder);
 	if (holder->conversion == 's')
-		ft_type_s(fmt, holder);
+		ft_type_str(fmt, holder);
 }
 
 void	ft_padding_left(char **src, char padding, int width)

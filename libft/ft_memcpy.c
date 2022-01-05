@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_placeholders_manager.c                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/04 17:18:03 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 16:56:19 by ablaamim         ###   ########.fr       */
+/*   Created: 2021/10/20 13:24:09 by ablaamim          #+#    #+#             */
+/*   Updated: 2021/11/10 13:34:14 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
-void	ft_placeholders_manager(t_fmt *fmt)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	t_holder *holder;
+	size_t			i;
+	unsigned char	*pd;
+	unsigned char	*ps;
 
-	fmt->i++;
-	holder = ft_initialize_holder();
-	ft_parsing(fmt, holder);
-	if (holder->conversion)
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	if (dst == src)
+		return (dst);
+	i = 0;
+	pd = (unsigned char *) dst;
+	ps = (unsigned char *) src;
+	while (n > 0)
 	{
-		ft_conversion_types(fmt, holder);
-		fmt->counter += write(1, holder->argument, holder->counter);
-		free(holder->argument);
+		pd[i] = ps[i];
+		i++;
+		n--;
 	}
-	free(holder->prefix);
-	free(holder);
+	return (dst);
 }

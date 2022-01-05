@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_type_c.c                                        :+:      :+:    :+:   */
+/*   ft_type_char.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 01:51:57 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 14:22:16 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/05 16:35:37 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_type_c(t_fmt *fmt, t_holder *holder)
+void	ft_type_char(t_fmt *fmt, t_holder *holder)
 {
 	char	ch;
 

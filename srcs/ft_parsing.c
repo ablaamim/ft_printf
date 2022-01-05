@@ -6,13 +6,13 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 17:31:57 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 16:20:49 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/05 17:04:26 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_parse_conversion(t_fmt *fmt, t_holder *holder)
+void	ft_conversion_parser(t_fmt *fmt, t_holder *holder)
 {
 	if (!ft_strchr(HOLDER_ALL_FLAGS, fmt->format[fmt->i]) \
 		&& ft_isprint(fmt->format[fmt->i]))
@@ -38,7 +38,7 @@ void	ft_width_parser(t_fmt *fmt, t_holder *holder)
 	holder->width = width;
 }
 
-void	ft_parse_precision(t_fmt *fmt, t_holder *holder)
+void	ft_precision_parser(t_fmt *fmt, t_holder *holder)
 {
 	int	precision;
 
