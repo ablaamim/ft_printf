@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 19:41:18 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/04 17:43:10 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/05 00:13:52 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define HOLDER_ALL_FLAGS "-0# +"
 # define HOLDER_JUSTIFY '-'
 # define HOLDER_PREFIX "# +"
-# define HOLDER_PAD '0'
+# define HOLDER_PADDING '0'
 # define HOLDER_PRECISION '.'
 
 # define DECIMAL_BASE "0123456789"
@@ -34,7 +34,7 @@
 
 # define MINUS '-'
 # define PLUS '+'
-# define ' '
+# define SPACE ' '
 
 // STRUCTURES USED :
 

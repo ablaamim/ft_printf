@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 10:59:15 by ablaamim          #+#    #+#             */
-/*   Updated: 2021/11/14 18:27:23 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/05 00:36:51 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <stdlib.h>
 
 // Part 1 functions
+char	*ft_append_char(char const *str, char const c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);

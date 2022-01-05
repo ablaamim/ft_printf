@@ -6,7 +6,7 @@
 #    By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 19:39:18 by ablaamim          #+#    #+#              #
-#    Updated: 2021/11/14 18:32:46 by ablaamim         ###   ########.fr        #
+#    Updated: 2022/01/05 00:35:04 by ablaamim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ CFLAGS	= -Wall -Werror -Wextra
 CC	= gcc
 # 	* functions that must be compiled through our makefile
 SRCS    = ft_atoi.c \
+	ft_append_char.c \
 	ft_bzero.c \
 	ft_calloc.c \
 	ft_isalnum.c \
