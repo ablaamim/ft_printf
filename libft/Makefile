@@ -21,6 +21,7 @@ CC	= gcc
 # 	* functions that must be compiled through our makefile
 SRCS    = ft_strndup.c \
 	ft_memcpy.c \
+	ft_uitoa_bae.c \
 	ft_append_char.c \
 	ft_isascii.c \
 	ft_isdigit.c \

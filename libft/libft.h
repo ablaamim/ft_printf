@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 10:59:15 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 16:53:56 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/05 17:52:29 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+char	*ft_uitoa_base(unsigned long nbr, char *base);
 char	*ft_strndup(const char *str, size_t n);
 char	*ft_append_char(char const *str, char const c);
 int		ft_isdigit(int c);
