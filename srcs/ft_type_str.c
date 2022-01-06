@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 14:59:54 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 16:44:13 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/06 18:08:44 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_type_str(t_fmt *fmt, t_holder *holder)
 	if (holder->precision > -1)
 	{
 		tmp = holder->argument;
-		holder->argument = ft_strndup(tmp, (size_t) (holder->precision));
+		holder->argument = ft_strndup(tmp, (size_t) holder->precision);
 		free(tmp);
 	}
 	if (!holder->left_justify)

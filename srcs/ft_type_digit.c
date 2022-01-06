@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 17:43:54 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 18:57:02 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/06 18:07:53 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@ static void	ft_convert_digit_width(t_holder *holder, int sign)
 		else if (holder->padding == '0')
 		{
 			if (sign < 0 || ft_strchr(holder->prefix, ' ') || \
-				ft_strchr(holder->prefix, '+'))
-				ft_padding_left(&holder->argument, holder->padding, holder->width - 1);
+			ft_strchr(holder->prefix, '+'))
+				ft_padding_left(&holder->argument, \
+			holder->padding, holder->width - 1);
 			else
-				ft_padding_left(&holder->argument, holder->padding, holder->width);
+				ft_padding_left(&holder->argument, \
+				holder->padding, holder->width);
 			ft_add_prefix(holder, sign);
 		}
 	}

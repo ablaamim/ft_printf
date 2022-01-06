@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 17:18:03 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 16:56:19 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/06 18:05:40 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_placeholders_manager(t_fmt *fmt)
 {
-	t_holder *holder;
+	t_holder	*holder;
 
 	fmt->i++;
 	holder = ft_initialize_holder();
