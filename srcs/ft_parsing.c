@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 17:31:57 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 17:04:26 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/06 17:01:59 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_width_parser(t_fmt *fmt, t_holder *holder)
 	{
 		while (ft_isdigit(fmt->format[fmt->i]))
 		{
-			width = (width * 10) + (fmt->format[fmt->i] - 48);
+			width = (width * 10) + (fmt->format[fmt->i] - '0');
 			fmt->i++;
 		}
 	}
@@ -45,14 +45,15 @@ void	ft_precision_parser(t_fmt *fmt, t_holder *holder)
 	precision = holder->precision;
 	if (fmt->format[fmt->i] == HOLDER_PRECISION)
 	{
+		fmt->i++;
 		if (!ft_isdigit(fmt->format[fmt->i]))
 			precision = 0;
-		else
+		if (ft_isdigit(fmt->format[fmt->i]))
 		{
 			precision = 0;
 			while (ft_isdigit(fmt->format[fmt->i]))
 			{
-				precision = (precision * 10) + (fmt->format[fmt->i] - 48);
+				precision = (precision * 10) + (fmt->format[fmt->i] - '0');
 				fmt->i++;
 			}
 		}

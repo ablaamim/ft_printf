@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 02:19:56 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/06 00:17:53 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/06 16:46:18 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ int	main(int argc, char **argv)
 	printf("------------------------ HEXADECIMALS -------------------------\n");
 	ft_printf("TEST 1 : |%x|\n", 42);
 	printf("TEST 1 : |%x|\n", 42);
+	printf("|%.10d|\n", 42);
+	ft_printf("|%.10d|\n", 42);
 	return (EXIT_SUCCESS);
 }
