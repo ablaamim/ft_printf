@@ -6,7 +6,7 @@
 /*   By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 01:44:29 by ablaamim          #+#    #+#             */
-/*   Updated: 2022/01/05 18:59:56 by ablaamim         ###   ########.fr       */
+/*   Updated: 2022/01/06 00:52:01 by ablaamim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,20 @@ void	ft_conversion_types(t_fmt *fmt, t_holder *holder)
 {
 	if (holder->conversion == 'c')
 		ft_type_char(fmt, holder);
-	if (holder->conversion == 's')
+	else if (holder->conversion == 's')
 		ft_type_str(fmt, holder);
-	if (holder->conversion == 'i' || holder->conversion == 'd')
+	else if (holder->conversion == 'p')
+		ft_type_pointer(fmt, holder);
+	else if (holder->conversion == 'i' || holder->conversion == 'd')
 		ft_type_digit(fmt, holder);
+	else if (holder->conversion == 'u')
+		ft_type_ux(fmt, holder, DECIMAL_BASE);
+	else if (holder->conversion == 'x')
+		ft_type_ux(fmt, holder, HEXA_LOWER_BASE);
+	else if (holder->conversion == 'X')
+		ft_type_ux(fmt, holder, HEXA_UPPER_BASE);
+	else
+		ft_type_percent(holder);
 }
 
 void	ft_padding_left(char **src, char padding, int width)
@@ -77,7 +87,7 @@ static void	ft_prefix_ux(t_holder *holder)
 	}
 }
 
-void	ft_add_prefix(t_holder	*holder, int sign)
+void	ft_add_prefix(t_holder *holder, int sign)
 {
 	int	len;
 

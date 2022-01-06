@@ -82,7 +82,10 @@ void	ft_conversion_parser(t_fmt *fmt, t_holder *holder);
 void	ft_conversion_types(t_fmt *fmt, t_holder *holder);
 void	ft_type_char(t_fmt *fmt, t_holder *holder);
 void	ft_type_str(t_fmt *fmt, t_holder *holder);
+void	ft_type_pointer(t_fmt *fmt, t_holder *holder);
 void	ft_type_digit(t_fmt *fmt, t_holder *holder);
+void	ft_type_ux(t_fmt *fmt, t_holder *holder, char *base);
+void	ft_type_percent(t_holder *holder);
 
 // CONVERSION SUBFUNCTIONS
 void	ft_padding_left(char **src, char padding, int width);
