@@ -262,3 +262,15 @@ It returns the t_holder variable that holds all the information about that parti
 ``` 
 
 ---
+</h1>
+
+<h2 align="center">
+	:trophy: <i>Final Score :</i>
+</h2>
+
+</p>
+<p align="center">
+<img src="https://github.com/ablaamim/ft_printf/blob/main/SRC/score_125.png">
+<p/>
+
+---
